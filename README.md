@@ -860,9 +860,368 @@ public:
     }
 };
 ```
-Выберите все верные утверждения.
+Выберите все верные утверждения.</br>
 <code>В non_static_method можно использовать other_non_static_method;</br>
 В non_static_method можно использовать static_method;</br>
 В non_static_method можно использовать non_static_value;</br>
 Чтобы вызвать non_static_method обязательно нужно создать объект;</br>
 В non_static_method можно использовать static_value;</code>
+
+56)Язык С++. Дана структура:
+```cpp
+struct Point{
+    int x,y;
+};
+```
+Каким образом можно создать переменную типа Point?</br>
+<code>Point p = {1, 1};</br>
+Point p = {};</br>
+Point p {1, 2}</code>
+
+57)Язык С++. Что из перечисленного может быть использовано в качестве объявления конструктора по умолчанию для класса SomeClass?</br.
+<code>SomeClass(int a=0, int b=0){}</br>
+SomeClass(){}</br>
+SomeClass() = default;</code>
+
+58)Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum Color {
+    YELLOW = -2,
+    BLACK,
+    PINK = -1,
+    GREEN = 0
+};
+
+Color color = Color::BLACK;
+std::cout << color;
+```
+<code>-1</code>
+
+59)Дан фрагмент кода на С++:
+```cpp
+class MyClass{
+    double i = 1.0;
+    friend double operator+ (MyClass a, double b);
+};
+
+double operator+ (MyClass a, double b){
+    return a.i + b;
+}
+
+MyClass obj;
+double value = 2.0;
+```
+Выберите все выражения, которые НЕ вызовут ошибки:</br>
+<code>value + value;</br>
+obj + value;</br>
+obj + 2.0;</code>
+
+60)Язык С++. Что из нижеперечисленного может быть полем структуры?</br>
+<code>Указатели;</br>
+Строки;</br>
+Фундаментальные типы (int, double, ...);</br>
+Структуры и Классы;</br>
+Массивы;</code>
+
+61)Дан фрагмент кода на языке С++. Выберите верные утверждения.
+```cpp
+enum Color {
+    YELLOW = -2,
+    BLACK,
+    PINK = -2,
+    GREEN
+};
+```
+<code>BLACK равно -1</br>
+GREEN равно -1</code>
+
+62)Язык Go. Какая структура называется анонимной?
+```go
+var a struct {
+    Title     string
+    Author    string
+}
+```
+
+63)Язык С++. Для чего используется ключевое слово override?</br>
+Это ключевое слово НЕ обязательно использовать. Оно заставляет компилятор проверить, что у предка существует такой же метод как текущий и что он виртуальный. Если это не так, будет ошибка компиляции;
+
+64)Дан фрагмент кода на С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+};
+
+MyClass obj;
+if (obj) std::cout << 1;
+else std::cout << 2;
+```
+<code>Ошибка</code>
+
+65)Код на С++. Требуется запретить доступ к конструктору класса Point из внешнего кода, как это можно сделать?</br>
+<code>private: Point();</code>
+
+66)Язык Go. Дан тип данных и функция:
+```go
+type Point struct {
+    x, y int
+}
+
+func foo(p Point){
+    p.x = 10
+    p.y = 10
+}
+```
+Если передать переменную типа Point в функцию foo указанным выше образом, то:</br>
+<code>Внутри функции будет доступна копия структуры;</code>
+
+67)Дан фрагмент кода на С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+    operator bool(){
+        return i > 1.0;
+    }
+};
+
+MyClass obj;
+if (obj) std::cout << 1;
+else std::cout << 2;
+```
+<code>2</code>
+
+68)Язык С++. Какая структура называется анонимной?
+```cpp
+struct {
+    int x,y;
+} s;
+```
+
+69)Код на С++. Сколько конструкторов может быть у класса?</br>
+<code>Сколько угодно</code>
+
+70)Дан фрагмент кода на С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+    void operator*(double b){
+        i * b;
+    }
+};
+
+MyClass obj;
+std::cout << obj * 1.0;
+```
+<code>Ошибка</code>
+
+71)Язык С++. Дан тип данных и прототип функции:
+```cpp
+struct Point{
+    int x,y;
+};
+
+void foo(Point p);
+```
+Если передать переменную типа Point в функцию foo указанным выше образом, то:</br>
+<code>Внутри функции будет доступна копия структуры</code>
+
+72)Дан фрагмент кода на С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+    double operator*(double b){
+        return i * b;
+    }
+};
+
+MyClass obj;
+std::cout << obj * 1.0;
+```
+<code>1</code>
+
+73)Дан фрагмент кода на языке С++:
+```cpp
+struct One{
+    int x,y;
+} a;
+
+struct Two{
+    int x,y;
+} b;
+```
+Допустим ли следующий код?
+```cpp
+a = {1, 2};
+b = a;
+```
+<code>Нет, т.к. у a и b разные типы;</code>
+
+74)Дан фрагмент кода на языке С++:
+```cpp
+struct One{
+    int x,y;
+} a, b;
+```
+Допустим ли следующий код?
+```cpp
+a = {1, 2};
+b = a;
+```
+<code>Да, b получит копию полей a;</code>
+
+75)Язык С++. Дано перечисление. Выберите все способы получения значения со стандартного ввода.
+```cpp
+enum Color {
+    YELLOW = 0,
+    BLACK = 1,
+    PINK = 2
+} color;
+```
+```cpp
+int i;
+std::cin >> i; // Пользователь вводит число: 0
+color = Color(i);
+```
+```cpp
+int i;
+std::cin >> i; // Пользователь вводит число: 0
+color = static_cast<Color>(i);
+```
+
+76)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int i = 0;
+    int j = 0;
+    
+    SomeClass(){
+        i = 10;
+    }
+    
+    SomeClass(int value):SomeClass(){
+        j = value;
+    }
+};
+
+SomeClass obj(10);
+std::cout << obj.i << ' ' << obj.j;
+```
+<code>10 10</code>
+
+77)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int i = 0;
+    int j = 0;
+    
+    SomeClass(){
+        i = 10;    
+    }
+    
+    SomeClass(int value){
+        SomeClass();
+        j = value;
+    }
+};
+
+SomeClass obj(10);
+std::cout << obj.i << ' ' << obj.j;
+```
+<code>0 10</code>
+
+78)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int i = 0;
+    
+    SomeClass(int i){
+        i = i;
+    }
+};
+
+SomeClass obj(10);
+std::cout << obj.i;
+```
+<code>0</code>
+
+79)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int i = 0;
+    
+    SomeClass(int i){
+        this->i = i;
+    }
+};
+
+SomeClass obj(10);
+std::cout << obj.i;
+```
+<code>10</code>
+
+80)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int i = 0;
+    
+    SomeClass(int i):i(i){
+    }
+};
+
+SomeClass obj(10);
+std::cout << obj.i;
+```
+<code>10</code>
+
+81)Язык С++. От чего зависит порядок инициализации полей класса, указанных в списке инициализаторов?</br>
+<code>От того, в каком порядке эти поля объявлены</code>
+
+82)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    const int i = 0;
+    
+    SomeClass(int i){
+        this->i = i;
+    }
+};
+
+SomeClass obj(10);
+std::cout << obj.i;
+```
+<code>Ошибка</code>
+
+83)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int& i;
+    
+    SomeClass(int& i):i(i){
+    }
+};
+
+int i = 0;
+SomeClass obj(i);
+std::cout << obj.i;
+```
+<code>0</code>
+
+84)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    int& i;
+    
+    SomeClass(int& i){
+        this->i = i;
+    }
+};
+
+int i = 0;
+SomeClass obj(i);
+std::cout << obj.i;
+```
+<code>Ошибка</code>
