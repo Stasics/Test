@@ -54,4 +54,83 @@ class MyClass{};
 ```
 Выберите все верные варианты, которые являются допустимыми объявлениям.<br>
 <code>double operator+ (double a, MyClass b);</code></br>
-<code>double operator+ (MyClass a, double b);</code></br>
+<code>double operator+ (MyClass a, double b);</code>
+
+8)Язык Go. Какие поля могут быть в структурном типе?</br>
+<code>Анонимные поля;</code></br>
+<code>Не константные поля;</code>
+
+9)Дан кода на Go. Что будет выведено на экран в результате его выполнения:
+```go
+package main
+import "fmt"
+
+func change(abc []int) {
+    for i := range abc {
+        abc[i] = 4
+    }
+    fmt.Println(abc)
+}
+
+func main() {
+    abc := []int{1, 2, 3}
+    change(abc)
+    fmt.Println(abc)
+}
+```
+<code>[4 4 4]</code></br>
+<code>[4 4 4]</code>
+
+10)Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+public:
+    void get(){
+        std::cout << 'A';
+    }
+};
+
+class B: public A{
+public:
+    void get(){
+        std::cout << 'B';
+    }
+};
+
+class C: public B{
+public:
+    void get(){
+        std::cout << 'C';
+    }
+};
+
+int main(){
+    A* obj = new C;
+    obj->get();
+}
+```
+<code>A</code>
+
+11)Язык Go. Дан фрагмент кода:
+```go
+type A struct{
+    value int
+}
+
+type Printer interface{
+    print()
+}
+
+func main() {
+    var obj A
+    p := Printer(&obj)
+    p.print()
+}
+```
+```cpp
+func (a *A) print(){
+    fmt.Print(a.value)
+}
+```
