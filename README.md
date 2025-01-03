@@ -622,3 +622,247 @@ int main(){
 }
 ```
 <code>Ошибка</code>
+
+44)Дан фрагмент кода на С++:
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+};
+
+double operator+ (MyClass a, double b){
+    return a.i + b;
+}
+
+MyClass obj;
+double value = 2.0;
+```
+Выберите все выражения, которые НЕ вызовут ошибки:</br>
+<code>value + value;</code></br>
+<code>obj + value;</code></br>
+<code>obj + 2.0;</code>
+
+45)Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    char i;
+public:
+    Point(char val=0):i(val){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+<code>1</code>
+
+46)Язык С++. Дан класс:
+```cpp
+class SomeClass{
+    int value = 0;
+public:
+    void one(){
+        value = 1;
+    }
+    void one() const{
+        std::cout << value;
+    }
+    
+    void two(){
+        value = 2;
+    }
+    
+    void three() const {
+        std::cout << 3;
+    }
+    
+    void four() {
+        std::cout << 4;
+    }
+};
+```
+и переменная созданная таким образом:
+```cpp
+const SomeClass s;
+```
+Какие из перечисленных вызовов метода НЕ приведут к ошибке?</br>
+<code>s.three();</code></br>
+<code>s.one();</code>
+
+47)Каким образом можно создать переменную типа структура в языке С++?
+```cpp
+struct Point{
+    int x,y;
+} p1, p2;
+```
+```cpp
+struct Point{
+    int x,y;
+};
+```
+```cpp
+Point p1, p2;
+struct{
+    int x,y;
+} p1, p2;
+```
+
+48)Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum Color {
+    YELLOW = 1,
+    BLACK = 1,
+    PINK,
+    GREEN
+};
+
+Color color = Color::BLACK;
+std::cout << color;
+```
+<code>1</code>
+
+49)Язык Go. В текущий пакет из пакета other была импортирована структура:
+```go
+type Book struct {
+    Title       string
+    author      string
+    Description string
+    Price       int
+    pages       int
+}
+```
+Какие поля будут доступны для использования в текущем пакете?</br>
+<code>Price</code></br>
+<code>Description</code></br>
+<code>Title</code>
+
+50)Дан фрагмент кода на Go. Что будет содержать переменная container после его выполнения?
+```go
+var container map[int]int = make(map[int]int)
+var a = container[-1]
+```
+<code>Ключ: -1 со значением: 0</code>
+
+51)Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+    char value = 'a';
+public:
+    virtual void get(){
+        std::cout << value;
+    }
+};
+
+class B: public A{
+    char value = 'b';
+public:
+    virtual void get(){
+        std::cout << value;
+    }
+};
+
+void print(A* obj){
+    obj->get();
+}
+
+int main(){
+    print(new B);
+}
+```
+<code>b</code>
+
+52)Дан фрагмент кода на С++:
+```cpp
+struct MyClass{
+    double i = 1.0;
+};
+
+double operator+ (double a, MyClass b){
+    return a + b.i;
+}
+
+MyClass obj;
+double value = 2.0;
+```
+Выберите все выражения, которые НЕ вызовут ошибки:</br>
+<code>value + value;</code></br>
+<code>value + obj;</code></br>
+
+53)Язык С++. Дан класс:
+```cpp
+class SomeClass{
+    int non_static_value = 0;
+    static const int static_value = 0;
+public:
+    static void static_method() {
+    }
+    static void other_static_method() {
+    }    
+
+    void non_static_method() {
+    }
+    void other_non_static_method() {
+    }
+};
+```
+Выберите все верные утверждения.</br>
+<code>В static_method можно использовать other_static_method;</code></br>
+<code>Чтобы вызвать static_method НЕ обязательно иметь объект;</code></br>
+<code>В static_method можно использовать static_value;</code></br>
+
+54)Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+    char value = 'a';
+public:
+    void get(){
+        std::cout << value;
+    }
+};
+
+class B: public A{
+    char value = 'b';
+public:
+    void get(){
+        std::cout << value;
+    }
+};
+
+void print(A* obj){
+    obj->get();
+}
+
+int main(){
+    print(new B);
+}
+```
+<code>a</code>
+
+55)Язык С++. Дан класс:
+```cpp
+class SomeClass{
+    int non_static_value = 0;
+    static const int static_value = 0;
+public:
+    static void static_method() {
+    }
+    static void other_static_method() {
+    }    
+
+    void non_static_method() {
+    }
+    void other_non_static_method() {
+    }
+};
+```
+Выберите все верные утверждения.
+<code>В non_static_method можно использовать other_non_static_method;</br>
+В non_static_method можно использовать static_method;</br>
+В non_static_method можно использовать non_static_value;</br>
+Чтобы вызвать non_static_method обязательно нужно создать объект;</br>
+В non_static_method можно использовать static_value;</code>
