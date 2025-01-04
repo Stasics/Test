@@ -1225,3 +1225,336 @@ SomeClass obj(i);
 std::cout << obj.i;
 ```
 <code>Ошибка</code>
+
+85)Язык С++. Что из нижеперечисленного приведёт к объявлению структуры?
+```cpp
+struct {
+    int a;
+} s;
+```
+```cpp
+struct a_struct{
+    int a;
+};
+```
+86)Язык Go. Что из нижеперечисленного приведёт к объявлению структуры?
+```cpp
+type Mail = struct {
+    Address string
+    Message string
+    Code int
+}
+```
+```cpp
+var Address struct {
+    Name    string
+    City    string
+    Pincode int
+}
+```
+```cpp
+pizza := struct {
+    address string 
+    name string
+    cost int
+}{
+    address: "address",
+    name:    "Pizza",
+    cost:    100,
+}
+```
+```cpp
+type Employee struct {
+    name string
+    age int
+}
+```
+
+87)Дан фрагмент кода на Go. Каким образом можно получить доступ к полю x переменной var p Point = Point{}?
+```go
+type Point struct{
+    x float64
+    y float64
+}
+```
+<code>fmt.Print( p.x )</code></br>
+<code>fmt.Print( (&p).x )</code>
+
+88)Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::unordered_set<int> container{1, 2, 3, 4};
+container.insert(container.begin(), 4);
+```
+<code>1, 2, 3, 4 но в порядке зависящем от хэш-функции</code>
+
+89)Дан фрагмент кода на С++ и класс MyClass объявленный как:
+```cpp
+class MyClass{};
+```
+Выберите все верные варианты, которые являются допустимыми объявлениям.</br>
+<code>double operator/ (MyClass a, double b);</code></br>
+double operator+ (MyClass a, double b);</br>
+double operator- (MyClass a, double b);</code>
+
+90)Дан фрагмент кода на Go. Что будет содержать переменная container после его выполнения?
+```go
+var container map[string]int
+container[-1] = 1
+```
+<code>Ошибка компиляции - недопустимый тип</code>
+
+91)Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    Point(){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+<code>Ошибка. Не доступен конструктор по умолчанию</code>
+
+92)Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class SomeClass{
+    int value = 1;
+    void method(int value){
+        value = value;
+    }
+} s;
+
+s.method(5);
+std::cout << s.value;
+```
+
+93)Дан фрагмент кода на С++ и класс MyClass объявленный как:
+```cpp
+class MyClass{};
+```
+Выберите все верные варианты, которые являются допустимыми объявлениям.</br>
+<code>double operator/ (MyClass a, double b);</br>
+void operator/ (MyClass a, double b);</br>
+double operator/ (MyClass a);0,67</code>
+
+94)Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum Color {
+    YELLOW,
+    BLACK,
+    PINK,
+    GREEN
+};
+
+int BLACK = 0;
+Color color = Color::BLACK;
+std::cout << color;
+```
+<code>0</code>
+
+95)Язык Go. Что будет выведено на экран в результате работы этого кода?
+```go
+package main
+import "fmt"
+
+type Data struct{
+    i int
+}
+
+func (d *Data) method(){
+    d.i = 1
+}
+
+func (d Data) method(){
+    d.i = 1
+}
+
+func main() {
+    var d *Data = &Data{}
+    d.method()
+    fmt.Print(d.i)
+}
+```
+<code>1 no</code>
+
+96)Язык Go. Дан фрагмент кода:
+```go
+type A struct{
+    value int
+}
+
+func (a *A) print(){
+    fmt.Print("*")
+}
+
+type Printer interface{
+    print()
+}
+
+func main() {
+    var obj *A = nil
+    p := Printer(obj)
+    
+    if p == nil{
+        fmt.Print("+")
+    } else {
+        fmt.Print("-")
+    }
+}
+```
+<code>-</code>
+
+97)Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    char i;
+public:
+    Point():i(0){}
+    Point(char val=0):i(val){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+<code>Ошибка. Двусмысленность при вызове конструктора</code>
+
+98)Язык Go. Структуры A, B и С и переменные a, b, c объявлены следующим образом:
+```go
+type A struct {
+    Title       string
+    Author      string
+}
+
+type B struct {
+    Title       string
+    Author      string
+}
+
+type C = struct {
+    Title       string
+    Author      string
+}
+    
+a := A{}
+b := B{}
+c := C{}
+```
+Выберите все допустимые выражения.</br>
+<code>neverno vse</code>
+
+99)Дан фрагмент кода на С++. Каким образом можно создать один или несколько объектов класса Point?
+```cpp
+struct Point{
+    Point(){}
+};
+```
+<code>new Point();</br>
+new Point;</br>
+Point p[10];</br>
+Point p;0,8</code>
+
+100)Язык С++. Дана структура:
+```cpp
+struct Point{
+    int x,y;
+};
+```
+Выберите фрагменты не вызывающие ошибки.</br>
+```cpp
+Point p;
+p = {1, 1};
+```
+```cpp
+Point p = {1, 1}, p2;
+p2 = p;
+```
+```cpp
+Point p = {1, 1}, p2 = {2, 2};
+p2.x = p2.x + p.x;
+p2.y = p2.y + p.y;0,75
+```
+
+101)Дан фрагмент кода на языке С++. Выберите верные утверждения.
+```cpp
+enum Color {
+    YELLOW = -1,
+    BLACK = 0,
+    PINK = 1,
+    GREEN = 2
+};
+```
+<code>Color mix = Color(YELLOW + PINK); // mix будет равно BLACK</br>
+int i = YELLOW + PINK; // i будет равно 0</code>
+
+102)Дан фрагмент кода на языке С++. Выберите верные утверждения.
+```cpp
+enum class Color {
+    YELLOW = -1,
+    BLACK = 0,
+    PINK = 1,
+    GREEN = 2
+};
+```
+<code>int i = Color::YELLOW + Color::PINK; // i будет равно 0</code>
+
+103)Язык С++. Что из перечисленного является правильным объявлением и определением класса?</br>
+<code>struct SomeClass{};</br>
+class SomeClass{};</code>
+
+104)Дан фрагмент кода на языке С++:
+```cpp
+enum class Color {
+    YELLOW = 0,
+    BLACK = 1,
+    PINK = 2
+};
+Color color = Color::BLACK;
+```
+и функция с представленным ниже прототипом:
+```cpp
+void foo(Color clr);
+```
+<code>foo(Color(1));</br>
+foo(color);</br>
+foo(Color::YELLOW);</code>
+
+105)Язык С++. Где можно объявить/определить новый класс?</br>
+<code>В глобальной области видимости</br>
+В теле функции</br>
+Внутри других классов</code>
+
+106)Дан фрагмент кода на языке С++:
+```cpp
+enum Color {
+    YELLOW = 0,
+    BLACK = 1,
+    PINK = 2
+};
+Color color = Color::BLACK;
+```
+и функция с представленным ниже прототипом:
+```cpp
+void foo(Color clr);
+```
+Какой вариант вызова функции НЕ приведёт к ошибке?</br>
+<code>foo(Color(1));</br>
+foo(Color::YELLOW);</br>
+foo(color);</br>
+foo(YELLOW);</code>
+
+107)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
+```cpp
+struct SomeClass{
+    const int i = 0;
+    
+    SomeClass(int i):i(i){
+    }
+};
+
+SomeClass obj(10);
+cout << obj.i;
+```
+<code>0</code>
