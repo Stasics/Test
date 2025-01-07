@@ -99,7 +99,8 @@ class MyClass{};
 ```
 Выберите все верные варианты, которые являются допустимыми объявлениям.</br>
 <code>double operator+ (double a, MyClass b);</code></br>
-<code>double operator+ (MyClass a, double b);</code>
+<code>double operator+ (MyClass a, double b);</code></br>
+<code>double operator+ (MyClass a, MyClass b);</code>
 
 10)Язык Go. Какие поля могут быть в структурном типе?</br>
 <code>Анонимные поля;</code></br>
@@ -423,6 +424,8 @@ class SomeClass{
 s.method(5);
 std::cout << s.value;
 ```
+<code>Ошибка</code>
+
 31)Язык Go. Что будет выведено на экран в результате работы этого кода?
 ```go
 package main
@@ -464,8 +467,6 @@ int main(){
 ```
 <code>Переменная container не изменится;</code>
 
-
-
 34)Дан фрагмент кода на Go. Каким образом можно получить доступ к полю x переменной var p *Point = &Point{}?
 ```cpp
 type Point struct{
@@ -496,8 +497,7 @@ class MyClass{};
 ```
 Выберите все верные варианты, которые являются допустимыми объявлениям.</br>
 <code>double operator/ (MyClass a, double b);</br>
-void operator/ (MyClass a, double b);</br>
-double operator/ (MyClass a);0,67</code>
+void operator/ (MyClass a, double b);</code>
 
 38)Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
 ```cpp
@@ -512,7 +512,7 @@ int BLACK = 0;
 Color color = Color::BLACK;
 std::cout << color;
 ```
-<code>0</code>
+<code>Ошибка. Повторное объявление имени BLACK</code>
 
 39)Дан кода на Go. Что будет выведено на экран в результате его выполнения:
 ```go
@@ -659,7 +659,7 @@ func main() {
     fmt.Print(d.i)
 }
 ```
-<code>1 no</code>
+<code>Ошибка</code>
 
 46)Где можно объявить структуру в языке С++?</br>
 <code>Внутри других структур;</code></br>
@@ -881,9 +881,9 @@ struct Point{
 struct Point{
     int x,y;
 };
+Point p1, p2;
 ```
 ```cpp
-Point p1, p2;
 struct{
     int x,y;
 } p1, p2;
@@ -1116,7 +1116,11 @@ b := B{}
 c := C{}
 ```
 Выберите все допустимые выражения.</br>
-<code>neverno vse</code>
+<code>c = b</br>
+a = c</br>
+b = c</br>
+c = a</code>
+
 
 73)Дан фрагмент кода на С++:
 ```cpp
@@ -1176,7 +1180,8 @@ struct Point{
 <code>new Point();</br>
 new Point;</br>
 Point p[10];</br>
-Point p;0,8</code>
+Point p;</br>
+class Point p;</code>
 
 79)Дан фрагмент кода на С++. Что будет на экране в результате выполнения данного фрагмента?
 ```cpp
@@ -1210,6 +1215,10 @@ p2 = p;
 Point p = {1, 1}, p2 = {2, 2};
 p2.x = p2.x + p.x;
 p2.y = p2.y + p.y;0,75
+```
+```
+Point p = {1, 1}, p2;
+p2 = {p.y, p.x};
 ```
 
 81)Дан фрагмент кода на языке С++. Выберите верные утверждения.
@@ -1273,7 +1282,7 @@ enum class Color {
     GREEN = 2
 };
 ```
-<code>int i = Color::YELLOW + Color::PINK; // i будет равно 0</code>
+<code>Во всех остальных вариантах будет ошибка, т.к. для Color не определены операторы + и/или =</code>
 
 87)Код на С++. Сколько конструкторов может быть у класса?</br>
 <code>Сколько угодно</code>
@@ -1306,7 +1315,9 @@ void foo(Point p);
 
 90)Язык С++. Что из перечисленного является правильным объявлением и определением класса?</br>
 <code>struct SomeClass{};</br>
-class SomeClass{};</code>
+class SomeClass{}</br>
+struct SomeClass{}</br>
+SomeClass class {};</code>
 
 91)Дан фрагмент кода на языке С++:
 ```cpp
@@ -1360,7 +1371,8 @@ b = a;
 94)Язык С++. Где можно объявить/определить новый класс?</br>
 <code>В глобальной области видимости</br>
 В теле функции</br>
-Внутри других классов</code>
+Внутри других классов</br>
+Внутри конструкции блок {}</code>
 
 95)Дан фрагмент кода на языке С++:
 ```cpp
@@ -1513,7 +1525,7 @@ struct SomeClass{
 SomeClass obj(10);
 cout << obj.i;
 ```
-<code>0</code>
+<code>10</code>
 
 105)Дан фрагмент кода на языке С++. Что будет напечатано в результате его выполнения?
 ```cpp
