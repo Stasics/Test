@@ -1315,9 +1315,7 @@ void foo(Point p);
 
 90)Язык С++. Что из перечисленного является правильным объявлением и определением класса?</br>
 <code>struct SomeClass{};</br>
-class SomeClass{}</br>
-struct SomeClass{}</br>
-SomeClass class {};</code>
+class SomeClass{};</code>
 
 91)Дан фрагмент кода на языке С++:
 ```cpp
